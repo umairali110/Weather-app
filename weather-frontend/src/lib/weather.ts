@@ -24,3 +24,7 @@ export async function getAirQuality(lat: number, lon: number) {
   const res = await api.get('/weather/air-quality', { params: { lat, lon } });
   return res.data;
 }
+export async function askWeatherAI(question: string, lat: number, lon: number, city?: string) {
+  const res = await api.post('/weather/ask', { question, lat, lon, city });
+  return res.data; // { answer: string }
+}

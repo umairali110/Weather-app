@@ -1,5 +1,5 @@
 "use client";
-
+import WeatherChatWidget from "@/components/WeatherChatWidget";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
@@ -278,6 +278,7 @@ export default function WeatherPage() {
           )}
         </div>
       </div>
+      <WeatherChatWidget lat={lat} lon={lon} city={place?.name || current.name} />
     </div>
   );
 }

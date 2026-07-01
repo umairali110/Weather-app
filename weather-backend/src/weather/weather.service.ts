@@ -7,10 +7,7 @@ export class WeatherService {
   private readonly geoUrl = 'https://api.openweathermap.org/geo/1.0';
   private readonly dataUrl = 'https://api.openweathermap.org/data/2.5';
 
-  // Search by city/state/country name -> returns matching locations with lat/lon
   async searchLocation(query: string) {
-    // top of weather.service.ts, inside getCurrentWeather/searchLocation, or just in the constructor
-console.log('API KEY LOADED:', process.env.OPENWEATHER_API_KEY);
     try {
       const res = await axios.get(`${this.geoUrl}/direct`, {
         params: { q: query, limit: 5, appid: this.apiKey },
